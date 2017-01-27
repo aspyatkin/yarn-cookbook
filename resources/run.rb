@@ -4,7 +4,7 @@ resource_name :yarn_run
 
 property :script, String, name_property: true
 property :user, String
-property :user_home, String, default: nil
+property :user_home, [String, nil], default: nil
 property :dir, String
 property :args, Array, default: []
 property :production, [TrueClass, FalseClass], default: false

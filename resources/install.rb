@@ -4,7 +4,7 @@ resource_name :yarn_install
 
 property :dir, String, name_property: true
 property :user, String
-property :user_home, String, default: nil
+property :user_home, [String, nil], default: nil
 
 default_action :run
 
