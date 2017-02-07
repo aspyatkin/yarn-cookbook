@@ -1,5 +1,7 @@
 id = 'yarn'
 
+default[id]['upgrade_package'] = true
+
 default[id]['apt_repository']['uri'] = 'https://dl.yarnpkg.com/debian/'
 default[id]['apt_repository']['key_uri'] = \
   'https://dl.yarnpkg.com/debian/pubkey.gpg'
