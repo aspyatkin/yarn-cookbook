@@ -9,8 +9,8 @@ version '0.2.0'
 provides 'yarn::default'
 recipe 'yarn::default', 'Install or upgrade Yarn'
 
-provides 'yarn::add_apt_repository'
-recipe 'yarn::add_apt_repository', 'Add Yarn apt repository to a system'
+provides 'yarn::repository'
+recipe 'yarn::repository', 'Add Yarn repository to a system'
 
 provides 'yarn::install_package'
 recipe 'yarn::install_package', 'Install Yarn'
@@ -27,3 +27,4 @@ issues_url "#{scm_url}/issues" if respond_to?(:issues_url)
 
 chef_version '~> 12'
 supports 'ubuntu', '>= 14.04'
+supports 'centos', '>= 7'

@@ -1,5 +1,15 @@
-include_recipe 'yarn::add_apt_repository'
+#
+# Cookbook Name:: yarn
+# Recipe:: install_package
+#
+# Author: Alexander Pyatkin <aspyatkin@gmail.com>
+# Author: Dieter Blomme <dieterblomme@gmail.com>
+#
+# Copyright 2017
+#
 
-package 'yarn' do
-  action :install
+include_recipe 'yarn::repository'
+
+package 'jenkins' do
+  version node['yarn']['package']['version']
 end
