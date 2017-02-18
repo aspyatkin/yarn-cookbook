@@ -10,6 +10,6 @@
 
 include_recipe 'yarn::repository'
 
-package 'jenkins' do
+package 'yarn' do
   version node['yarn']['package']['version']
 end
