@@ -1,11 +1,27 @@
-id = 'yarn'
+#
+# Cookbook Name:: yarn
+# Attributes:: default
+#
+# Author: Alexander Pyatkin <aspyatkin@gmail.com>
+# Author: Dieter Blomme <dieterblomme@gmail.com>
+#
+# Copyright 2017
+#
 
-default[id]['upgrade_package'] = true
+default['yarn']['package'].tap do |package|
+  package['upgrade_package'] = true
+  package['version'] = nil
 
-default[id]['apt_repository']['uri'] = 'https://dl.yarnpkg.com/debian/'
-default[id]['apt_repository']['key_uri'] = \
-  'https://dl.yarnpkg.com/debian/pubkey.gpg'
-default[id]['apt_repository']['distribution'] = 'stable'
-default[id]['apt_repository']['components'] = %w(
-  main
-)
+  package['repository']['uri'] = case node['platform_family']
+                         when 'debian' then 'https://dl.yarnpkg.com/debian/'
+                         when 'rhel' then 'https://dl.yarnpkg.com/rpm/'
+                         end
+  package['repository']['key'] = case node['platform_family']
+                         when 'debian' then 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+                         when 'rhel' then 'https://dl.yarnpkg.com/rpm/pubkey.gpg'
+                         end
+  package['repository']['distribution'] = 'stable'
+  package['repository']['components'] = %w(
+    main
+  )
+end

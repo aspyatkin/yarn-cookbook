@@ -46,7 +46,7 @@ end
 
 ## Disclaimer
 1. This cookbook is under development. Use at your own risk.
-2. This cookbook doesn't install Node.js itself, it presupposes that Node.js is installed on your system. Any method of installing Node.js on your system should work.
+2. This cookbook doesn't install Node.js itself, it presupposes that Node.js is installed on your system. Any method of installing Node.js on your system should work. E.g. by using the [nodejs cookbook](https://supermarket.chef.io/cookbooks/nodejs).
 3. This cookbook works only on Ubuntu (14.04 has been tested so far)
 
 ## License
