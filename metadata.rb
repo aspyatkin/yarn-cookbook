@@ -26,7 +26,8 @@ source_url scm_url if respond_to?(:source_url)
 issues_url "#{scm_url}/issues" if respond_to?(:issues_url)
 
 chef_version '~> 12'
-supports 'debian', '>= 7'
+supports 'debian', '>= 7.0'
 supports 'ubuntu', '>= 14.04'
-supports 'centos', '>= 7'
-supports 'rhel', '>= 7'
+supports 'centos', '>= 7.0'
+supports 'rhel', '>= 7.0'
+
