@@ -9,4 +9,4 @@
 #
 
 include_recipe \
-  "yarn::#{node['yarn']['upgrade_package'] ? 'upgrade' : 'install'}_package"
+  "yarn::#{node['yarn']['package']['upgrade'] ? 'upgrade' : 'install'}_package"

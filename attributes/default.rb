@@ -9,7 +9,7 @@
 #
 
 default['yarn']['package'].tap do |package|
-  package['upgrade_package'] = true
+  package['upgrade'] = true
   package['version'] = nil
 
   package['repository']['uri'] = case node['platform_family']

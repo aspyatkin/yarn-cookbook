@@ -8,7 +8,7 @@ Chef cookbook to install [Yarn](https://yarnpkg.com/) package manager.
 
 ### yarn::default
 
-Install or *upgrade* (default action) Yarn (it depends on `node['yarn']['upgrade_package']` attribute, which defaults to `true`).
+Install or *upgrade* (default action) Yarn (it depends on `node['yarn']['package']['upgrade']` attribute, which defaults to `true`).
 
 ### yarn::install_package
 
@@ -47,7 +47,12 @@ end
 ## Disclaimer
 1. This cookbook is under development. Use at your own risk.
 2. This cookbook doesn't install Node.js itself, it presupposes that Node.js is installed on your system. Any method of installing Node.js on your system should work. E.g. by using the [nodejs cookbook](https://supermarket.chef.io/cookbooks/nodejs).
-3. This cookbook works only on Ubuntu (14.04 has been tested so far)
+3. This cookbook should work on modern Debian and RHEL based systems.
+
+## Testing
+Run `script/bootstrap` to install necessary Ruby Gems.
+
+Run `script/test` to perform [KitchenCI](http://kitchen.ci/) tests.
 
 ## License
 MIT @ [Alexander Pyatkin](https://github.com/aspyatkin)
