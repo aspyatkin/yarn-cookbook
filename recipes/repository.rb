@@ -15,6 +15,12 @@ when 'debian'
     distribution node['yarn']['package']['repository']['distribution']
     key node['yarn']['package']['repository']['key']
     components node['yarn']['package']['repository']['components']
+    action :add
+    notifies :run, 'execute[apt-get update]', :immediately
+  end
+
+  package 'apt-transport-https' do
+    action :install
   end
 when 'rhel'
   yum_repository 'yarn' do
