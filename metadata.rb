@@ -4,7 +4,7 @@ maintainer_email 'aspyatkin@gmail.com'
 license 'MIT'
 description 'Install Yarn package manager'
 long_description ::IO.read(::File.join(::File.dirname(__FILE__), 'README.md'))
-version '0.3.2'
+version '0.3.3'
 
 provides 'yarn::default'
 recipe 'yarn::default', 'Install or upgrade Yarn'
@@ -24,6 +24,8 @@ provides 'yarn_run[run]'
 scm_url = 'https://github.com/aspyatkin/yarn-cookbook'
 source_url scm_url if respond_to?(:source_url)
 issues_url "#{scm_url}/issues" if respond_to?(:issues_url)
+
+depends 'apt'
 
 chef_version '~> 12'
 supports 'debian', '>= 7.0'
