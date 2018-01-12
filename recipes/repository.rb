@@ -23,7 +23,7 @@ when 'debian'
     components node['yarn']['package']['repository']['components']
     action :add
   end
-when 'rhel'
+when 'rhel', 'amazon'
   yum_repository 'yarn' do
     baseurl node['yarn']['package']['repository']['uri']
     gpgkey  node['yarn']['package']['repository']['key']
