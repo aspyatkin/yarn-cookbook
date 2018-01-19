@@ -5,7 +5,7 @@
 # Author: Alexander Pyatkin <aspyatkin@gmail.com>
 # Author: Dieter Blomme <dieterblomme@gmail.com>
 #
-# Copyright 2017
+# Copyright 2018
 #
 
 include_recipe \
