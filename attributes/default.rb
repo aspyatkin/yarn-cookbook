@@ -14,11 +14,11 @@ default['yarn']['package'].tap do |package|
 
   package['repository']['uri'] = case node['platform_family']
                          when 'debian' then 'https://dl.yarnpkg.com/debian/'
-                         when 'rhel' then 'https://dl.yarnpkg.com/rpm/'
+                         when 'rhel', 'amazon' then 'https://dl.yarnpkg.com/rpm/'
                          end
   package['repository']['key'] = case node['platform_family']
                          when 'debian' then 'https://dl.yarnpkg.com/debian/pubkey.gpg'
-                         when 'rhel' then 'https://dl.yarnpkg.com/rpm/pubkey.gpg'
+                         when 'rhel', 'amazon' then 'https://dl.yarnpkg.com/rpm/pubkey.gpg'
                          end
   package['repository']['distribution'] = 'stable'
   package['repository']['components'] = %w(
