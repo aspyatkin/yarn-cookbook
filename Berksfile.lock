@@ -30,6 +30,7 @@ GRAPH
     windows (>= 1.2.2)
   windows (2.1.1)
     ohai (>= 4.0.0)
-  yarn (0.3.0)
+  yarn (0.4.1)
+    apt (>= 0.0.0)
   yum-epel (2.1.1)
     compat_resource (>= 12.16.3)
