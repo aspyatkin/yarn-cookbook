@@ -7,6 +7,7 @@ property :user, String
 property :user_home, [String, nil], default: nil
 property :dir, String
 property :args, Array, default: []
+property :environment, Hash, default: {}
 property :production, [TrueClass, FalseClass], default: false
 
 default_action :run
@@ -32,10 +33,10 @@ action :run do
     cwd new_resource.dir
     user new_resource.user
     group user_group
-    environment(
+    environment({
       'HOME' => user_home,
       'USER' => new_resource.user
-    )
+    }.merge(new_resource.environment))
     action :run
   end
 end
