@@ -1,6 +1,7 @@
 require 'etc'
 
 resource_name :yarn_install
+provides :yarn_install
 
 property :dir, String, name_property: true
 property :user, String
