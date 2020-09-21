@@ -1,6 +1,7 @@
 require 'etc'
 
 resource_name :yarn_run
+provides :yarn_run
 
 property :script, String, name_property: true
 property :user, String
