@@ -4,7 +4,7 @@ maintainer_email 'aspyatkin@gmail.com'
 license 'MIT'
 description 'Install Yarn package manager'
 long_description ::IO.read(::File.join(::File.dirname(__FILE__), 'README.md'))
-version '0.4.2'
+version '0.4.3'
 
 provides 'yarn::default'
 recipe 'yarn::default', 'Install or upgrade Yarn'
